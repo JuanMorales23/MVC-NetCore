@@ -39,5 +39,23 @@ namespace ProyectoMVC.Controllers
             return View();
             }
         }
+       
+        public IActionResult Editar(ContactoModel oContactoModel)
+        {
+            //Metodo editar
+           if(!ModelState.IsValid)
+            {
+                return View();
+            }
+            var respuesta = _ContactoDatos.Editar(oContactoModel);
+            if(respuesta)
+            {
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

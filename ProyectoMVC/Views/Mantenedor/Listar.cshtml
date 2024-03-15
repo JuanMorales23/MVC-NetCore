@@ -10,7 +10,7 @@
     </div>
     <div class="card-body">
         <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success">Crear nuevo</a>
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -26,6 +26,9 @@
                         <td>@item.Nombre</td>
                         <td>@item.Telefono</td>
                         <td>@item.Correo</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-priary" asp-route-IdContacto="@item.IdContacto">Editar</a>
+                        </td>
                     </tr>
                 }
             </tbody>
